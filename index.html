@@ -4,142 +4,139 @@
   <title>Milionaire</title>
   <script src="https://unpkg.com/vue"></script>
   <script src="https://unpkg.com/semantic-ui-vue/dist/umd/semantic-ui-vue.min.js"></script>
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.12/semantic.min.css"></link>
 </head>
 <body>
   <div id="app">
-    <div v-for="result in results">
-      <div v-html="result.question"></div>
+    <div class="ui container text">
+      <div class="ui one cards">
+        <div v-for="result in results" class="ui card">
+          <div class="ui content">
+            <div v-html="result.question"></div>
+          </div>
+          <div class="ui extra content">
+            <div class="ui two buttons">
+              <div class="ui basic green button">True</div>
+              <div class="ui basic red button">False</div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
+</div>
 
-  <script>
-    var app = new Vue({
-      el: '#app',
-      data: {
-        results: [
-          {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "Which character is from &quot;Splatoon&quot;?",
-            "correct_answer": "Marie",
-            "incorrect_answers": [
-              "Cyrus",
-              "Palutena",
-              "Shulk"
-            ]
-          },
-          {
-            "category": "Science & Nature",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "The humerus, paired radius, and ulna come together to form what joint?",
-            "correct_answer": "Elbow",
-            "incorrect_answers": [
-              "Knee",
-              "Sholder",
-              "Ankle"
-            ]
-          },
-          {
-            "category": "Science & Nature",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "What common name is given to the medial condition, tibial stress syndrome (MTSS)?",
-            "correct_answer": "Shin Splints",
-            "incorrect_answers": [
-              "Tennis Elbow",
-              "Carpal Tunnel",
-              "Housemaid&#039;s Knee"
-            ]
-          },
-          {
-            "category": "General Knowledge",
-            "type": "multiple",
-            "difficulty": "easy",
-            "question": "What geometric shape is generally used for stop signs?",
-            "correct_answer": "Octagon",
-            "incorrect_answers": [
-              "Hexagon",
-              "Circle",
-              "Triangle"
-            ]
-          },
-          {
-            "category": "Geography",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "Which of the following Inuit languages was the FIRST to use a unique writing system not based on the Latin alphabet?",
-            "correct_answer": "Inuktitut",
-            "incorrect_answers": [
-              "Inuinnaqtun",
-              "Greenlandic",
-              "Inupiat"
-            ]
-          },
-          {
-            "category": "Entertainment: Music",
-            "type": "boolean",
-            "difficulty": "medium",
-            "question": "&quot;Twenty One Pilots&quot; made the song &quot;The Motion&quot; featuring Sampha.",
-            "correct_answer": "False",
-            "incorrect_answers": [
-              "True"
-            ]
-          },
-          {
-            "category": "Entertainment: Film",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "What was the name of the actor who played Leatherface in the 1974 horror film, The Texas Chainsaw Massacre?",
-            "correct_answer": "Gunnar Hansen",
-            "incorrect_answers": [
-              "Edwin Neal",
-              "John Dugan",
-              "Joe Bill Hogan"
-            ]
-          },
-          {
-            "category": "Entertainment: Video Games",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "Which game in the &quot;Monster Hunter&quot; series introduced the monster &quot;Gobul&quot;?",
-            "correct_answer": "Monster Hunter Tri",
-            "incorrect_answers": [
-              "Monster Hunter Freedom Unite",
-              "Monster Hunter Frontier",
-              "Monster Hunter Generations"
-            ]
-          },
-          {
-            "category": "Science & Nature",
-            "type": "multiple",
-            "difficulty": "medium",
-            "question": "What is the largest living organism currently known to man?",
-            "correct_answer": "Honey Fungus",
-            "incorrect_answers": [
-              "Blue Whale",
-              "Redwood Tree",
-              "The Coral Reef"
-            ]
-          },
-          {
-            "category": "Geography",
-            "type": "multiple",
-            "difficulty": "hard",
-            "question": "In which country is Tallinn located?",
-            "correct_answer": "Estonia",
-            "incorrect_answers": [
-              "Finland",
-              "Sweden",
-              "Poland"
-            ]
-          }
+<script>
+  Vue.use(SemanticUIVue);
+  var app = new Vue({
+    el: '#app',
+    data: {
+      current: 0,
+      results: [
+      {
+        "category": "History",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "The Tiananmen Square protests of 1989 were held in Hong Kong.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "Entertainment: Music",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "The music video to The Buggle&#039;s &quot;Video Killed the Radio Star&quot; was the first music video to broadcast on MTV.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+        "False"
+        ]
+      },
+      {
+        "category": "Entertainment: Video Games",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "In &quot;Super Mario 64&quot;, collecting 100 coins on a level will give you a 1-UP.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "History",
+        "type": "boolean",
+        "difficulty": "medium",
+        "question": "Sargon II, a king of the Neo-Assyrian Empire, was a direct descendant of Sargon of Akkad.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "Science: Computers",
+        "type": "boolean",
+        "difficulty": "medium",
+        "question": "&quot;Windows NT&quot; is a monolithic kernel.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "Entertainment: Video Games",
+        "type": "boolean",
+        "difficulty": "hard",
+        "question": "In Undertale, having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number Song Call&quot;.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "Entertainment: Japanese Anime & Manga",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "The name of the attack &quot;Kamehameha&quot; in Dragon Ball Z was named after a famous king of Hawaii.",
+        "correct_answer": "True",
+        "incorrect_answers": [
+        "False"
+        ]
+      },
+      {
+        "category": "Entertainment: Video Games",
+        "type": "boolean",
+        "difficulty": "easy",
+        "question": "In &quot;Undertale&quot;, the main character of the game is Sans.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "History",
+        "type": "boolean",
+        "difficulty": "hard",
+        "question": "The USS Missouri (BB-63) last served in the Korean War.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
+        ]
+      },
+      {
+        "category": "Vehicles",
+        "type": "boolean",
+        "difficulty": "medium",
+        "question": "The majority of Subaru vehicles are made in China.",
+        "correct_answer": "False",
+        "incorrect_answers": [
+        "True"
         ]
       }
-    })
-  </script>
+      ]
+    }
+  })
+</script>
 </body>
 </html>
 
