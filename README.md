@@ -9,6 +9,9 @@ plan
   - progress bar
 - npm & webpack, split to modules
   - vue init webpack quiz
+  - cd quiz
+  - npm install semantic-ui-vue --save
+  - npm install semantic-ui-css --save
 
 - routing
   - added nav bar
@@ -28,6 +31,7 @@ plan
 - linki do repozytoriów dla początkujących
 -
 
+https://opentdb.com/api.php?amount=5&type=boolean
 
 directives
   v-bind  // one way binding
@@ -40,3 +44,6 @@ directives
   v-cloak
   v-once
 
+events
+  $on(eventName)
+  $emit(eventName)

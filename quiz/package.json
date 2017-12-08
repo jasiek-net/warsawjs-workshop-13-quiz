@@ -10,6 +10,7 @@
     "build": "node build/build.js"
   },
   "dependencies": {
+    "semantic-ui-css": "^2.2.12",
     "semantic-ui-vue": "^0.1.1",
     "vue": "^2.5.2"
   },
