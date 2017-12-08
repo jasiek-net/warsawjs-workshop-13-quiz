@@ -30,9 +30,9 @@
         </div>
         <!-- question with answer buttons -->
         <div class="ten wide column">
-          <div v-if="question" class="ui card one centered">
+          <div v-if="question" class="ui card one centered" style="width: 100%">
             <div class="content">
-              <div v-html="question.question"></div>
+              <div v-html="question.question" class="header"></div>
             </div>
             <div class="extra content">
               <div class="ui two buttons">
@@ -42,9 +42,9 @@
             </div>
           </div>
           <!-- you win! card -->
-          <div v-else class="ui card one centered">
+          <div v-else class="ui card one centered" style="width: 100%">
             <div class="content">
-              <div class="header">You win!!!</div>
+              <div class="header" style="text-align: center">You win!!!</div>
             </div>
             <div class="ui extra content">
               <div class="ui two buttons">
