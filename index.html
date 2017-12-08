@@ -8,135 +8,156 @@
 </head>
 <body>
   <div id="app">
-    <div class="ui container text">
-      <div class="ui one cards">
-        <div v-for="result in results" class="ui card">
-          <div class="ui content">
-            <div v-html="result.question"></div>
-          </div>
-          <div class="ui extra content">
-            <div class="ui two buttons">
-              <div class="ui basic green button">True</div>
-              <div class="ui basic red button">False</div>
+    <div class="ui container grid text">
+
+      <div class="two column row">
+        <div class="four wide column">
+          <div class="ui vertical steps">
+            <div class="step" v-for="result, index in results">
+              <div class="title">Question {{ index + 1 }}</div>
             </div>
           </div>
         </div>
+
+        <div class="twelve wide column">
+          <div class="ui card one centered">
+            <div class="ui content">
+              <div v-html="question.question"></div>
+            </div>
+            <div class="ui extra content">
+              <div class="ui two buttons">
+                <div v-on:click="answer" class="ui basic green button">True</div>
+                <div v-on:click="answer" class="ui basic red button">False</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
-</div>
 
-<script>
-  Vue.use(SemanticUIVue);
-  var app = new Vue({
-    el: '#app',
-    data: {
-      current: 0,
-      results: [
-      {
-        "category": "History",
-        "type": "boolean",
-        "difficulty": "easy",
-        "question": "The Tiananmen Square protests of 1989 were held in Hong Kong.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
+  <script>
+    Vue.use(SemanticUIVue);
+    var app = new Vue({
+      el: '#app',
+      computed: {
+        question() {
+          return this.results[this.current]
+        }
       },
-      {
-        "category": "Entertainment: Music",
-        "type": "boolean",
-        "difficulty": "easy",
-        "question": "The music video to The Buggle&#039;s &quot;Video Killed the Radio Star&quot; was the first music video to broadcast on MTV.",
-        "correct_answer": "True",
-        "incorrect_answers": [
-        "False"
-        ]
+      methods: {
+        answer(ev) {
+          console.log('click!', ev);
+        }
       },
-      {
-        "category": "Entertainment: Video Games",
-        "type": "boolean",
-        "difficulty": "easy",
-        "question": "In &quot;Super Mario 64&quot;, collecting 100 coins on a level will give you a 1-UP.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "History",
-        "type": "boolean",
-        "difficulty": "medium",
-        "question": "Sargon II, a king of the Neo-Assyrian Empire, was a direct descendant of Sargon of Akkad.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "Science: Computers",
-        "type": "boolean",
-        "difficulty": "medium",
-        "question": "&quot;Windows NT&quot; is a monolithic kernel.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "Entertainment: Video Games",
-        "type": "boolean",
-        "difficulty": "hard",
-        "question": "In Undertale, having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number Song Call&quot;.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "Entertainment: Japanese Anime & Manga",
-        "type": "boolean",
-        "difficulty": "easy",
-        "question": "The name of the attack &quot;Kamehameha&quot; in Dragon Ball Z was named after a famous king of Hawaii.",
-        "correct_answer": "True",
-        "incorrect_answers": [
-        "False"
-        ]
-      },
-      {
-        "category": "Entertainment: Video Games",
-        "type": "boolean",
-        "difficulty": "easy",
-        "question": "In &quot;Undertale&quot;, the main character of the game is Sans.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "History",
-        "type": "boolean",
-        "difficulty": "hard",
-        "question": "The USS Missouri (BB-63) last served in the Korean War.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
-        ]
-      },
-      {
-        "category": "Vehicles",
-        "type": "boolean",
-        "difficulty": "medium",
-        "question": "The majority of Subaru vehicles are made in China.",
-        "correct_answer": "False",
-        "incorrect_answers": [
-        "True"
+      data: {
+        current: 0,
+        results: [
+        {
+          "category": "History",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "The Tiananmen Square protests of 1989 were held in Hong Kong.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "Entertainment: Music",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "The music video to The Buggle&#039;s &quot;Video Killed the Radio Star&quot; was the first music video to broadcast on MTV.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+          "False"
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "In &quot;Super Mario 64&quot;, collecting 100 coins on a level will give you a 1-UP.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "History",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "Sargon II, a king of the Neo-Assyrian Empire, was a direct descendant of Sargon of Akkad.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "Science: Computers",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "&quot;Windows NT&quot; is a monolithic kernel.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "boolean",
+          "difficulty": "hard",
+          "question": "In Undertale, having a &quot;Fun Value&quot; set to 56-57 will play the &quot;Wrong Number Song Call&quot;.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "Entertainment: Japanese Anime & Manga",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "The name of the attack &quot;Kamehameha&quot; in Dragon Ball Z was named after a famous king of Hawaii.",
+          "correct_answer": "True",
+          "incorrect_answers": [
+          "False"
+          ]
+        },
+        {
+          "category": "Entertainment: Video Games",
+          "type": "boolean",
+          "difficulty": "easy",
+          "question": "In &quot;Undertale&quot;, the main character of the game is Sans.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "History",
+          "type": "boolean",
+          "difficulty": "hard",
+          "question": "The USS Missouri (BB-63) last served in the Korean War.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        },
+        {
+          "category": "Vehicles",
+          "type": "boolean",
+          "difficulty": "medium",
+          "question": "The majority of Subaru vehicles are made in China.",
+          "correct_answer": "False",
+          "incorrect_answers": [
+          "True"
+          ]
+        }
         ]
       }
-      ]
-    }
-  })
-</script>
+    })
+  </script>
 </body>
 </html>
 
