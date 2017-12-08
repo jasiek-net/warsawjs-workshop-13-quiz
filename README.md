@@ -4,8 +4,14 @@ Quiz game prepared for #VueJS workshops in Warsaw
 
 plan
 - single file app (index.html)
+  - question card
+  - question list
+  - progress bar
 - npm & webpack, split to modules
-- routing, added nav bar
+
+- routing
+  - added nav bar
+  - ...
 - axios
 - vuex
 - ...
@@ -23,9 +29,13 @@ plan
 
 
 directives
-  v-bind
-  v-model
+  v-bind  // one way binding
+  v-model // two-way
   v-html
   v-if
   v-for
   v-on:click
+
+  v-cloak
+  v-once
+
