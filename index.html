@@ -11,15 +11,19 @@
     <div class="ui container grid text">
 
       <div class="two column row">
-        <div class="four wide column">
+        <div class="six wide column">
           <div class="ui vertical steps">
-            <div class="step" v-for="result, index in results">
-              <div class="title">Question {{ index + 1 }}</div>
+            <div class="step" v-bind:class="{ active: index === current, completed: index < current }" v-for="result, index in results">
+              <i class="question icon"></i>
+              <div class="content">
+                <div class="title">Question {{ index + 1 }}</div>
+                <div class="description">Question for {{ (index + 1) * 100 }} $</div>
+              </div>
             </div>
           </div>
         </div>
 
-        <div class="twelve wide column">
+        <div class="column">
           <div class="ui card one centered">
             <div class="ui content">
               <div v-html="question.question"></div>
@@ -49,6 +53,8 @@
       methods: {
         answer(ev) {
           console.log('click!', ev);
+          console.log(ev.target.innerText)
+          this.current += 1;
         }
       },
       data: {
