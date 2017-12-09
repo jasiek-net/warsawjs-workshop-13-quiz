@@ -3,59 +3,59 @@ Quiz game prepared for #VueJS workshops
 
 ## Plan
 **`single-file` - single file app**
-* question card
-* question list
-* progress bar (semantic-ui component)
+* [x] question card
+* [x] question list
+* [x] progress bar (semantic-ui component)
 
 **`modules` - vue-cli**
-* `vue init webpack quiz`
-* `npm install semantic-ui-vue --save`
-* `npm install semantic-ui-css --save`
-* npm & webpack
-* split to modules
+* [x] `vue init webpack quiz`
+* [x] `npm install semantic-ui-vue --save`
+* [x] `npm install semantic-ui-css --save`
+* [x] npm & webpack
+* [x] split to modules
 
 **`routing` - vue router**
-* `npm install vue-router --save`
-* outer layout
-* routes: intro, game, settings
+* [x] `npm install vue-router --save`
+* [x] outer layout
+* [x] routes: intro, game, settings
 
 **`network` - fetching questions** 
-* `npm install axios --save`
-* loading indicator
+* [x] `npm install axios --save`
+* [x] loading indicator
 
 ## Vue.js features
 **Template syntax**
-* `{{ msg }}` - interpolation
-* `v-bind`, `:` - one way binding
-* `v-model` - two-way (inputs etc.)
-* `v-html` - parse html
-* `v-if, v-else`, `v-show` - conditionals
-* `v-for` - render in loop
-* `v-on`, `@` - events 
-* `v-once` - render once
-* `v-cloak` - blank page before render
+* [x] `{{ msg }}` - interpolation
+* [x] `v-bind`, `:` - one way binding
+* [x] `v-model` - two-way (inputs etc.)
+* [x] `v-html` - parse html
+* [x] `v-if, v-else`, `v-show` - conditionals
+* [x] `v-for` - render in loop
+* [x] `v-on`, `@` - events 
+* [x] `v-once` - render once
+* [x] `v-cloak` - blank page before render
 
 **Components**
-* data
-* props
-* methods
-* computed
-* lifecycle
-* $on(eventName)
-* $emit(eventName)
-* nested components
+* [x] data
+* [x] props
+* [x] methods
+* [x] computed
+* [x] lifecycle
+* [x] $on(eventName)
+* [x] $emit(eventName)
+* [x] nested components
 
 **Router**
-* router-view
-* router-link
-* $router.push('/')
-* nested routes
+* [x] router-view
+* [x] router-link
+* [x] $router.push('/')
+* [x] nested routes
 
 ## Other
 **Tools**
-* vue-cli
-* vue dev-tools
-* npm & webpack
+* [x] vue-cli
+* [x] vue dev-tools
+* [x] npm & webpack
 
 **Credits**
 * [OpentDB](https://opentdb.com/api.php?amount=5&type=boolean) - API with questions
