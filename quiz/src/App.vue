@@ -4,7 +4,6 @@
   </div>
 </template>
 
-
 <style>
 #app {
   margin: 50px 0
