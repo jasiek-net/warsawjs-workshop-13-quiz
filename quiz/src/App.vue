@@ -1,19 +1,9 @@
 <template>
   <div id="app">
-    <Game></Game>
+    <router-view></router-view>
   </div>
 </template>
 
-<script>
-import Game from './components/Game';
-
-export default {
-  name: 'app',
-  components: {
-    Game,
-  }
-}
-</script>
 
 <style>
 #app {

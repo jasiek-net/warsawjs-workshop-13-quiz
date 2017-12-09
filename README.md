@@ -14,9 +14,13 @@ plan
   - npm install semantic-ui-css --save
 
 - routing
-  - added nav bar
+  - npm install vue-router --save
+  - added out layout
   - ...
-- axios
+- network
+  - npm install axios --save
+  - ...
+
 - vuex
 - ...
 
@@ -47,3 +51,12 @@ directives
 events
   $on(eventName)
   $emit(eventName)
+
+router
+  - router-view
+  - router-link
+  - $router.push('/')
+
+
+dev-tools
+vue-cli

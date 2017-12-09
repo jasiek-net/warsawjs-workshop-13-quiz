@@ -1,22 +1,22 @@
 <template>
   <div class="ui text container grid">
-      <progress-bar :percent="percent" />
-      <div class="row">
-        <steps-component
-          :steps="results"
-          :current="current"
-        />
-        <Cards
-          v-on:answer="answer"
-          :question="question"
-        />
-      </div>
+    <progress-bar :percent="percent" />
+    <div class="row">
+      <steps-component
+        :steps="results"
+        :current="current"
+      />
+      <Cards
+        v-on:answer="answer"
+        :question="question"
+      />
+    </div>
   </div>
 </template>
 
 <script>
-import Steps from './Steps';
-import Cards from './Cards';
+import Steps from '../components/Steps';
+import Cards from '../components/Cards';
 
 export default {
   computed: {
@@ -24,13 +24,19 @@ export default {
       return this.results[this.current]
     },
     percent() {
-      return (this.current / this.results.length) * 100;
+      return (this.current / this.length) * 100;
+    },
+    length() {
+      return this.results.length
     },
   },
   methods: {
     answer(answer) {
       if (this.question.correct_answer === answer) {
         this.current += 1;
+        if (this.current === this.length) {
+          this.$router.push('/won');
+        }
       } else {
         alert('Wrong Answer!')
       }
