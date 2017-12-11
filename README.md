@@ -1,6 +1,17 @@
 # warsawjs-workshop-13
 Quiz game prepared for #VueJS workshops
 
+## Config
+```
+# run app in developer mode
+cd quiz
+npm i && npm run dev
+
+# publish app at your_username.github.io/warsawjs-workshop-13-quiz
+cd quiz
+npm run publish
+```
+
 ## Plan
 **`single-file` - single file app**
 * [x] question card
@@ -22,6 +33,11 @@ Quiz game prepared for #VueJS workshops
 **`network` - fetching questions**
 * [x] `npm install axios --save`
 * [x] loading indicator
+
+**`vuex-store` - adding vuex to app**
+* [x] `npm install vuex --save`
+* [x] added settings with simple vuex example
+* [x] move all data logic to store
 
 ## Vue.js features
 **Template syntax**
@@ -51,6 +67,12 @@ Quiz game prepared for #VueJS workshops
 * [x] $router.push('/')
 * [x] nested routes
 
+**Vuex**
+* [x] state
+* [x] actions (dispatch)
+* [x] getters
+* [x] mutations (commit)
+
 ## Other
 **Tools**
 * [x] vue-cli
@@ -58,6 +80,7 @@ Quiz game prepared for #VueJS workshops
 * [x] npm & webpack
 
 **Credits**
+* [yes/no API](https://yesno.wtf) - API with yes/no gif's :)
 * [OpentDB](https://opentdb.com/api.php?amount=5&type=boolean) - API with questions
 * [Semantic UI](https://semantic-ui-vue.github.io/) - libs with styles & vue components
 * [Milionare Quiz](https://github.com/Valian/warsawjs-workshop-12-quiz) - repo from previus workshop
