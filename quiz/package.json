@@ -7,10 +7,12 @@
   "scripts": {
     "dev": "webpack-dev-server --inline --progress --config build/webpack.dev.conf.js",
     "start": "npm run dev",
-    "build": "node build/build.js"
+    "build": "node build/build.js",
+    "publish": "npm run build && node build/publish && rm -rf dist"
   },
   "dependencies": {
     "axios": "^0.17.1",
+    "gh-pages": "^1.1.0",
     "semantic-ui-css": "^2.2.12",
     "semantic-ui-vue": "^0.1.1",
     "vue": "^2.5.2",
