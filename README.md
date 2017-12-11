@@ -19,7 +19,7 @@ Quiz game prepared for #VueJS workshops
 * [x] outer layout
 * [x] routes: intro, game, settings
 
-**`network` - fetching questions** 
+**`network` - fetching questions**
 * [x] `npm install axios --save`
 * [x] loading indicator
 
@@ -31,7 +31,7 @@ Quiz game prepared for #VueJS workshops
 * [x] `v-html` - parse html
 * [x] `v-if, v-else`, `v-show` - conditionals
 * [x] `v-for` - render in loop
-* [x] `v-on`, `@` - events 
+* [x] `v-on`, `@` - events
 * [x] `v-once` - render once
 * [x] `v-cloak` - blank page before render
 
